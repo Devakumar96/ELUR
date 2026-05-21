@@ -1,6 +1,3 @@
-// ==========================================
-// GET ALL CARDS
-// ==========================================
 
 // ==========================================
 // COPY PHONE NUMBER
@@ -13,9 +10,9 @@ function copyNumber(number) {
     alert(number + " copied");
 
 }
-
-
-
+// ==========================================
+// GET ALL CARDS
+// ==========================================
 
 const cards =
     document.querySelectorAll(".bus-card");
@@ -210,3 +207,49 @@ setInterval(() => {
     startLiveCountdown();
 
 }, 1000);
+
+// ==========================================
+// THEME TOGGLER
+// ==========================================
+
+const themeToggler =
+    document.querySelector(".theme-toggler");
+
+const toggleBtn =
+    document.querySelector(".toggle-btn");
+
+
+// Open / Close
+
+toggleBtn.onclick = () => {
+
+    themeToggler.classList.toggle("active");
+
+};
+
+
+// ==========================================
+// COLOR CHANGE
+// ==========================================
+
+const themeButtons =
+    document.querySelectorAll(".theme-btn");
+
+
+themeButtons.forEach(button => {
+
+    button.onclick = () => {
+
+        const color =
+            button.getAttribute("data-color");
+
+        // Change Main Theme Color
+
+        document.documentElement.style.setProperty(
+            "--pumpkin-spice",
+            color
+        );
+
+    };
+
+});

@@ -490,3 +490,198 @@ body {
     }
 
 }
+/* =========================
+   THEME TOGGLER
+========================= */
+
+.theme-toggler {
+
+    position: fixed;
+
+    top: 120px;
+
+    right: -220px;
+
+    background: white;
+
+    width: 220px;
+
+    padding: 20px;
+
+    border-radius: 20px 0 0 20px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+    transition: 0.4s;
+
+    z-index: 9999;
+
+}
+
+
+/* Active Open */
+
+.theme-toggler.active {
+
+    right: 0;
+
+}
+
+
+/* Gear Button */
+
+.toggle-btn {
+
+    position: absolute;
+
+    top: 20px;
+
+    left: -55px;
+
+    width: 55px;
+
+    height: 55px;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px 0 0 12px;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+}
+
+
+/* Gear Icon */
+
+.toggle-btn i {
+
+    font-size: 1.5rem;
+
+    color: var(--pumpkin-spice);
+
+    animation: rotate 3s linear infinite;
+
+}
+
+
+/* Rotation */
+
+@keyframes rotate {
+
+    100% {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+/* Title */
+
+.theme-toggler h3 {
+
+    font-size: 1rem;
+
+    margin-bottom: 15px;
+
+    color: #333;
+
+}
+
+
+/* Color Buttons */
+
+.buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+
+/* Single Color */
+
+.theme-btn {
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    border: 3px solid white;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+
+}
+
+.theme-btn:hover {
+
+    transform: scale(1.1);
+
+}
+/* =========================
+   MOBILE THEME TOGGLER
+========================= */
+
+@media(max-width:768px){
+
+    .theme-toggler{
+
+        width: 180px;
+
+        right: -180px;
+
+        top: 100px;
+
+        padding: 15px;
+
+    }
+
+    .theme-toggler.active{
+
+        right: 0;
+
+    }
+
+    .toggle-btn{
+
+        width: 45px;
+
+        height: 45px;
+
+        left: -45px;
+
+    }
+
+    .toggle-btn i{
+
+        font-size: 1.2rem;
+
+    }
+
+    .theme-btn{
+
+        width: 35px;
+
+        height: 35px;
+
+    }
+
+}
