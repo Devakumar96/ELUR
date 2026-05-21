@@ -2,6 +2,21 @@
 // GET ALL CARDS
 // ==========================================
 
+// ==========================================
+// COPY PHONE NUMBER
+// ==========================================
+
+function copyNumber(number) {
+
+    navigator.clipboard.writeText(number);
+
+    alert(number + " copied");
+
+}
+
+
+
+
 const cards =
     document.querySelectorAll(".bus-card");
 
@@ -9,6 +24,7 @@ const cards =
 // ==========================================
 // FIND NEXT BUS
 // ==========================================
+
 
 function getNextBus(schedule) {
 

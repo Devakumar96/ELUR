@@ -216,6 +216,231 @@ body {
 }
 
 
+/* =========================
+   INFO SLIDER
+========================= */
+
+.info-slider {
+
+    height: 50px;
+
+    overflow: hidden;
+
+    background: white;
+
+    border-bottom: 1px solid #ddd;
+
+    position: relative;
+
+}
+
+
+/* Moving Container */
+
+.info-track {
+
+    display: flex;
+
+    flex-direction: column;
+
+    animation: verticalSlide 12s infinite;
+
+}
+
+
+/* =========================
+   TOP INFO BAR
+========================= */
+
+.top-info-bar {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background: white;
+
+    border-bottom: 1px solid #ddd;
+
+    padding: 12px 0;
+
+}
+
+
+/* Horizontal Moving */
+
+.info-scroll {
+
+    display: flex;
+
+    width: max-content;
+
+    animation: scrollLeft 20s linear infinite;
+
+}
+.copy-btn {
+
+    border: none;
+
+    background: var(--steel-azure);
+
+    color: white;
+
+    padding: 8px 12px;
+
+    border-radius: 10px;
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+.copy-btn:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+.info-scroll:hover {
+
+    animation-play-state: paused;
+
+}
+.info-scroll {
+
+    display: flex;
+
+    width: max-content;
+
+    animation: scrollLeft 20s linear infinite;
+
+}
+/* Each Box */
+
+.info-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    background: var(--platinum);
+
+    padding: 10px 18px;
+
+    border-radius: 16px;
+
+    margin-right: 18px;
+
+    min-width: 220px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+}
+
+
+/* Icon */
+
+.info-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--pumpkin-spice);
+
+    color: white;
+
+    border-radius: 12px;
+
+    font-size: 1.2rem;
+
+}
+
+
+/* Text Area */
+
+.info-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* Title */
+
+.info-title {
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+
+    color: var(--steel-azure);
+
+}
+
+
+/* Number */
+
+.info-number {
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    color: #333;
+
+}
+
+
+/* Animation */
+
+@keyframes scrollLeft {
+
+    from {
+
+        transform: translateX(100%);
+
+    }
+
+    to {
+
+        transform: translateX(-100%);
+
+    }
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .info-box {
+
+        min-width: 190px;
+
+        padding: 8px 14px;
+
+    }
+
+}
+
 /* ===================================
    FOOTER
 =================================== */
