@@ -15,6 +15,8 @@ function getNextBus(schedule) {
     const now =
         new Date();
 
+    let nextBus = null;
+
     for (let bus of schedule) {
 
         const [hours, minutes] =
@@ -23,14 +25,15 @@ function getNextBus(schedule) {
         const busTime =
             new Date();
 
+        // Today's Bus Time
         busTime.setHours(hours);
         busTime.setMinutes(minutes);
         busTime.setSeconds(0);
 
-        // Find Upcoming Bus
+        // Future Bus Found
         if (busTime > now) {
 
-            return {
+            nextBus = {
 
                 ...bus,
 
@@ -38,11 +41,49 @@ function getNextBus(schedule) {
 
             };
 
+            break;
+
         }
 
     }
 
-    return null;
+
+    // ==========================================
+    // IF NO BUS LEFT TODAY
+    // TAKE FIRST BUS OF NEXT DAY
+    // ==========================================
+
+    if (!nextBus) {
+
+        const firstBus =
+            schedule[0];
+
+        const [hours, minutes] =
+            firstBus.time.split(":");
+
+        const tomorrowBusTime =
+            new Date();
+
+        // Add Next Day
+        tomorrowBusTime.setDate(
+            tomorrowBusTime.getDate() + 1
+        );
+
+        tomorrowBusTime.setHours(hours);
+        tomorrowBusTime.setMinutes(minutes);
+        tomorrowBusTime.setSeconds(0);
+
+        nextBus = {
+
+            ...firstBus,
+
+            busTime: tomorrowBusTime
+
+        };
+
+    }
+
+    return nextBus;
 
 }
 
@@ -66,23 +107,7 @@ function updateCard(card, schedule) {
         card.querySelector(".countdown");
 
 
-    // No Bus
-
-    if (!nextBus) {
-
-        busNumber.innerText =
-            "No Bus";
-
-        routeText.innerText =
-            "Service Closed";
-
-        countdown.innerText =
-            "00h 00m 00s";
-
-        return;
-
-    }
-
+  
 
     // Update Bus Details
 
